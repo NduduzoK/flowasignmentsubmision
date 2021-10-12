@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.MuiButton-containedPrimary {
+  margin-top: 25px;
+}
+
+.tbloverflow {
+  overflow: auto;
+}
+
+.postbtn {
+  margin: 30px !important;
+}
+.textField {
+  margin: 20px !important;
+}
