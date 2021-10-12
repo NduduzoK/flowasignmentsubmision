@@ -28,7 +28,7 @@ export class View extends Component<props, UserInput>
         super(props);
         this.state = {
             fromDate: "2021-01-01",
-            toDate: "2021-10-11",
+            toDate: "2021-06-01",
             rowsdata: [{}]
         };
        //binding user date
@@ -59,14 +59,21 @@ export class View extends Component<props, UserInput>
      */
     GetPriceList = async () => {
         
+        /**
+         * !My data startedt not responding fro m this URL then used url_
+         * !But It gave me a long data and no filter, so I will create a Server and use JSON data to pull from
+         * ! run that server and pull from my server than online 
+         */
         let url = Api.API_URL; // fetch data from URL ( coindesk api)
+       
         //accepting user input dates
         let input = {
-            'startdate': this.state.fromDate,
-            'enddate': this.state.toDate,
+            'start': this.state.fromDate,
+            'end': this.state.toDate,
         }
         //using axios to use the GET 
         const results: any = await axios.get(url, { params: input });
+        
         //entries
         const data: any = Object.entries(results.data.bpi);
         var details: any = [];
@@ -120,7 +127,7 @@ export class View extends Component<props, UserInput>
                         id="todate"
                         label="To Date"
                         type="date"
-                        defaultValue="2021-10-11"
+                        defaultValue="2021-06-01"
                         value={toDate}
                         className="textField"
                         InputLabelProps={{
@@ -132,7 +139,7 @@ export class View extends Component<props, UserInput>
                         }}
                         onChange={this.userdateTo}
                     />
-                    <Button  variant="contained" color="secondary" className="postbtn"  onClick={this.GetPriceList}>Get Price</Button>
+                    <Button  variant="contained" color="secondary" className="postbtn"  onClick={this.GetPriceList}>Get Prices</Button>
                 </div>
 
                 <div style={{ height: 400, width: '100%' }} className="tbloverflow" >

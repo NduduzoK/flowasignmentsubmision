@@ -8,7 +8,7 @@ class App extends  Component
   render()
   {
    
-    let defaultData : string="";
+    let defaultData : string="React";
     return (
       
      

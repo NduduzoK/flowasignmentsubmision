@@ -1,5 +1,6 @@
 
 
 {
-  "API_URL" : "https://api.coindesk.com/v1/bpi/historical/close.json"
-}
+  "API_URL" : "https://api.coindesk.com/v1/bpi/historical/close.json",
+  "API_URL_v2":"https://api.coindesk.com/v1/bpi/historical/close.json?start=2020-01-01&end=2021-10-10"
+ }
